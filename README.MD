@@ -16,15 +16,46 @@ A real-time infrastructure monitoring stack built with Prometheus, Grafana, and 
 - Alerting when CPU > 80% or memory > 85%
 - Custom Grafana dashboards for infrastructure health
 - Alert routing via Alertmanager
+- Prometheus scraping metrics every 15 seconds
 
 ## Alert Rules
+
 | Alert | Condition | Severity |
 |-------|-----------|----------|
-| HighCPUUsage | CPU > 80% for 2 min | Warning |
-| HighMemoryUsage | Memory > 85% for 2 min | Critical |
-| ServiceDown | Target unreachable for 1 min | Critical |
+| High CPU Usage Alert | CPU > 80% for 1 min | Warning |
+| High Memory Usage Alert | Memory > 85% for 1 min | Critical |
 
-## Tech Stack
-Prometheus | Grafana | Alertmanager | Windows Exporter | PromQL | YAML
 ## Dashboard Preview
 ![SRE Monitoring Dashboard](dashboard.png)
+
+## Alerts Preview
+![Alert Rules](alerts.png)
+
+## How to Run
+
+### Prerequisites
+- Prometheus
+- Grafana
+- Alertmanager
+- Windows Exporter
+
+### Steps
+1. Start Prometheus:
+```bash
+.\prometheus.exe --config.file=prometheus.yml
+```
+2. Start Alertmanager:
+```bash
+.\alertmanager.exe --config.file=alertmanager.yml
+```
+3. Open Grafana at `http://localhost:3000`
+4. Import dashboard and add Prometheus data source
+
+## Access
+
+- **Grafana** → http://localhost:3000
+- **Prometheus** → http://localhost:9090
+- **Alertmanager** → http://localhost:9093
+
+## Tech Stack
+`Prometheus` `Grafana` `Alertmanager` `Windows Exporter` `PromQL` `YAML`
