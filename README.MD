@@ -51,11 +51,12 @@ A real-time infrastructure monitoring stack built with Prometheus, Grafana, and 
 3. Open Grafana at `http://localhost:3000`
 4. Import dashboard and add Prometheus data source
 
-## Access
-
-- **Grafana** → http://localhost:3000
-- **Prometheus** → http://localhost:9090
-- **Alertmanager** → http://localhost:9093
+## Access (Run Locally)
+> All services run locally after setup. Use the following default ports:
+- **Grafana** → `http://localhost:3000` (admin / admin123)
+- **Prometheus** → `http://localhost:9090`
+- **Alertmanager** → `http://localhost:9093`
+- **Windows Exporter** → `http://localhost:9182/metrics`
 
 ## Tech Stack
 `Prometheus` `Grafana` `Alertmanager` `Windows Exporter` `PromQL` `YAML`
